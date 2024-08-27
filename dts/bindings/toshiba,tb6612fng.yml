@@ -1,0 +1,25 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: |
+  Sensor driver for the TB6612FNG Motor Driver
+
+compatible: "toshiba,tb6612fng"
+
+include: [base.yaml, pinctrl-device.yaml]
+
+properties:
+  enable-gpios:
+    type: phandle-array
+    description: STANBY pin on TB6612FNG
+  ain1-gpios:
+    type: phandle-array
+  ain2-gpios:
+    type: phandle-array
+  bin1-gpios:
+    type: phandle-array
+  bin2-gpios:
+    type: phandle-array
+  pwms:
+    type: phandle-array
+    description: PWM specifier driving the output.

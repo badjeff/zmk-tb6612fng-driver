@@ -1,0 +1,24 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+DT_COMPAT_TB6612FNG := toshiba,tb6612fng
+
+config TB6612FNG
+  bool "TB6612FNG haptic motor driver"
+  default $(dt_compat_enabled,$(DT_COMPAT_TB6612FNG))
+  select PWM
+  help
+      Enable TB6612FNG haptic motor driver.
+
+if TB6612FNG
+
+DT_COMPAT_ZMK_BEHAVIOR_TB6612FNG := zmk,behavior-tb6612fng
+config ZMK_BEHAVIOR_TB6612FNG
+    bool
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_TB6612FNG))
+
+module = TB6612FNG
+module-str = TB6612FNG
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+endif #TB6612FNG

@@ -1,0 +1,8 @@
+/ {
+    behaviors {
+        /omit-if-no-ref/ tb6612fng: tb6612fng {
+            compatible = "zmk,behavior-tb6612fng";
+            #binding-cells = <2>;
+        };
+    };
+};
