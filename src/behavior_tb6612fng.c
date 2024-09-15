@@ -74,9 +74,6 @@ static int tb6612fng_binding_pressed(struct zmk_behavior_binding *binding,
     }
 
     // call sync to latch velocity setting to driver
-    //
-    // ** NOTE**: val1 is ignored currently. only ONE channel is implemented.
-    //
     val.val1 = chan;
     val.val2 = 0;
     err = sensor_attr_set(tb6612fng_dev, SENSOR_CHAN_ALL, 
